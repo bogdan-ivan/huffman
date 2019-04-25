@@ -1,1 +1,2 @@
-# huffman
+# Huffman Coding
+Compresie lossless
