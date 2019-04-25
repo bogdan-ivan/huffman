@@ -1,0 +1,12 @@
+﻿  Source.cpp
+Source.cpp(47): warning C4018: '<': signed/unsigned mismatch
+Source.cpp(51): warning C4018: '<': signed/unsigned mismatch
+Source.cpp(55): warning C4018: '<': signed/unsigned mismatch
+Source.cpp(63): warning C4018: '<': signed/unsigned mismatch
+Source.cpp(72): warning C4018: '<': signed/unsigned mismatch
+Source.cpp(93): warning C4018: '<': signed/unsigned mismatch
+  Generating code
+  All 272 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Huffman Coding.vcxproj -> D:\BOGDAN\FACULTATE\Algoritmica probleme pentru anul I\Big Problems\Huffman Coding\Release\Huffman Coding.exe
+  Huffman Coding.vcxproj -> D:\BOGDAN\FACULTATE\Algoritmica probleme pentru anul I\Big Problems\Huffman Coding\Release\Huffman Coding.pdb (Full PDB)
