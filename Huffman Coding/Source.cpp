@@ -6,16 +6,16 @@
 #include <sstream>
 #include <string>
 
-int arraytoint(int arr[], int n)
+std::string arrayToString(int arr[], int n)
 {
 	std::stringstream ss;
+	std::string result;
 
 	for (int i = 0; i < n; i++)
 	{
 		ss << arr[i];
 	}
 
-	int result;
 	ss >> result;
 	return result;
 }
@@ -48,7 +48,7 @@ struct node
 	node *left = nullptr;
 	node *right = nullptr;
 	std::string codfix;
-	int codvar = 0;
+	std::string codvar;
 };
 
 node* newNode(int frecventa)
@@ -200,9 +200,7 @@ void printCodes(node* root, int array[], int top, std::fstream &file, std::vecto
 	if (isLeaf(root)) 
 	{
 		std::cout << root->codfix << " => ";
-		//std::cout << root->caracter << " = ";
-		//printArray(array, top);
-		root->codvar = arraytoint(array, top);
+		root->codvar = arrayToString(array, top);
 		std::cout << root->caracter << " = " << root->codvar << std::endl;
 	    file << root->codvar << " ";
 		reInsert(leafs, root);
@@ -227,11 +225,6 @@ std::string codificare(std::vector<node> leafs)
 		}
 	}
 	return code;
-}
-
-void decodificare()
-{
-
 }
 
 std::string codeToChar(std::vector<node> leafs, int lungime)
@@ -298,18 +291,7 @@ void main()
 	printVectorChar(leafs);
 	printVectorFreq(leafs);
 
-
 	node* root = createTree(leafs);
-
-	/*printVectorChar(leafs);
-	printVectorFreq(leafs);*/
-	
-	/*std::cout << root->left->frecventa << "   " << root->right->frecventa << std::endl;
-	std::cout << "    " << root->right->left->frecventa << " " << root->right->right->frecventa << std::endl;
-	std::cout << "" << root->right->left->left->frecventa << " " << root->right->left->right->frecventa << " " << root->right->right->left->frecventa << " " << root->right->right->right->frecventa << std::endl;
-	std::cout << "     " << root->right->right->left->left->frecventa << " " << root->right->right->left->right->frecventa << std::endl;
-	*/
-	//std::cout << std::boolalpha << isLeaf(root->right->right->right) << std::endl;
 
 	printCodes(root, codes, 0, file, leafs);
 	file.put('x'); // ?
